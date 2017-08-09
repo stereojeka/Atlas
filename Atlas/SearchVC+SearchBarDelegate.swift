@@ -25,8 +25,6 @@ extension SearchViewController: UISearchBarDelegate {
                 self.searchResults = results
                 self.tableView.reloadData()
             } else {
-                self.searchResults = []
-                self.tableView.reloadData()
                 let alert = UIAlertController(title: "Search Results",
                                               message: "No matches found",
                                               preferredStyle: .alert)

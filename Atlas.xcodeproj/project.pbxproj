@@ -1,0 +1,400 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F32A97F21F30CDD100C15725 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A97F11F30CDD100C15725 /* AppDelegate.swift */; };
+		F32A97F91F30CDD100C15725 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32A97F71F30CDD100C15725 /* Main.storyboard */; };
+		F32A97FB1F30CDD100C15725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F32A97FA1F30CDD100C15725 /* Assets.xcassets */; };
+		F32A97FE1F30CDD100C15725 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32A97FC1F30CDD100C15725 /* LaunchScreen.storyboard */; };
+		F32A98061F30CF6800C15725 /* RegionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A98051F30CF6800C15725 /* RegionsViewController.swift */; };
+		F32A98081F30CF6D00C15725 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A98071F30CF6D00C15725 /* CountryListViewController.swift */; };
+		F32A980A1F30CF7100C15725 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A98091F30CF7100C15725 /* Country.swift */; };
+		F32A980C1F30CF7400C15725 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A980B1F30CF7400C15725 /* CountryService.swift */; };
+		F336AC891F39FE3E009D14DA /* FavoritesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F336AC881F39FE3E009D14DA /* FavoritesList.swift */; };
+		F3A7F0B01F38907D00CAA9C3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A7F0AF1F38907D00CAA9C3 /* SearchViewController.swift */; };
+		F3A7F0B21F389CF200CAA9C3 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3A7F0B11F389CF200CAA9C3 /* SearchResultCell.xib */; };
+		F3A7F0B41F389DBA00CAA9C3 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A7F0B31F389DBA00CAA9C3 /* SearchResultCell.swift */; };
+		F3A7F0B61F389F8E00CAA9C3 /* SearchVC+SearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A7F0B51F389F8E00CAA9C3 /* SearchVC+SearchBarDelegate.swift */; };
+		F3B6F9691F330D8D00E4F607 /* CountryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6F9681F330D8D00E4F607 /* CountryListCell.swift */; };
+		F3B6F96B1F330EA800E4F607 /* CountryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3B6F96A1F330EA800E4F607 /* CountryListCell.xib */; };
+		F3E988FF1F3345000010BC50 /* CountryInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E988FE1F3345000010BC50 /* CountryInfoViewController.swift */; };
+		F3FC074D1F3A04A800FE4D91 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC074C1F3A04A800FE4D91 /* FavoriteListViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F32A97EE1F30CDD100C15725 /* Atlas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atlas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F32A97F11F30CDD100C15725 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F32A97F81F30CDD100C15725 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F32A97FA1F30CDD100C15725 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F32A97FD1F30CDD100C15725 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F32A97FF1F30CDD100C15725 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F32A98051F30CF6800C15725 /* RegionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionsViewController.swift; sourceTree = "<group>"; };
+		F32A98071F30CF6D00C15725 /* CountryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
+		F32A98091F30CF7100C15725 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		F32A980B1F30CF7400C15725 /* CountryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
+		F336AC881F39FE3E009D14DA /* FavoritesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesList.swift; sourceTree = "<group>"; };
+		F3A7F0AF1F38907D00CAA9C3 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F3A7F0B11F389CF200CAA9C3 /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		F3A7F0B31F389DBA00CAA9C3 /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		F3A7F0B51F389F8E00CAA9C3 /* SearchVC+SearchBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SearchVC+SearchBarDelegate.swift"; sourceTree = "<group>"; };
+		F3B6F9681F330D8D00E4F607 /* CountryListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListCell.swift; sourceTree = "<group>"; };
+		F3B6F96A1F330EA800E4F607 /* CountryListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryListCell.xib; sourceTree = "<group>"; };
+		F3E988FE1F3345000010BC50 /* CountryInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryInfoViewController.swift; sourceTree = "<group>"; };
+		F3FC074C1F3A04A800FE4D91 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F32A97EB1F30CDD100C15725 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F32A97E51F30CDD100C15725 = {
+			isa = PBXGroup;
+			children = (
+				F32A97F01F30CDD100C15725 /* Atlas */,
+				F3A566C91F3B0FB0009B9656 /* Networking */,
+			);
+			sourceTree = "<group>";
+		};
+		F32A97EF1F30CDD100C15725 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F32A97EE1F30CDD100C15725 /* Atlas.app */,
+			);
+			name = Products;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		F32A97F01F30CDD100C15725 /* Atlas */ = {
+			isa = PBXGroup;
+			children = (
+				F32A97EF1F30CDD100C15725 /* Products */,
+				F3A566CA1F3B0FD6009B9656 /* Supporting Files */,
+				F3A566C81F3B0F70009B9656 /* Model */,
+				F3A566C71F3B0F3B009B9656 /* View */,
+				F3A566CB1F3B100A009B9656 /* Controller */,
+			);
+			path = Atlas;
+			sourceTree = "<group>";
+		};
+		F3A566C71F3B0F3B009B9656 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F3B6F9681F330D8D00E4F607 /* CountryListCell.swift */,
+				F3A7F0B31F389DBA00CAA9C3 /* SearchResultCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F3A566C81F3B0F70009B9656 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F32A98091F30CF7100C15725 /* Country.swift */,
+				F336AC881F39FE3E009D14DA /* FavoritesList.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F3A566C91F3B0FB0009B9656 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F32A980B1F30CF7400C15725 /* CountryService.swift */,
+			);
+			name = Networking;
+			path = Atlas;
+			sourceTree = "<group>";
+		};
+		F3A566CA1F3B0FD6009B9656 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F32A97F11F30CDD100C15725 /* AppDelegate.swift */,
+				F32A97F71F30CDD100C15725 /* Main.storyboard */,
+				F32A97FA1F30CDD100C15725 /* Assets.xcassets */,
+				F32A97FC1F30CDD100C15725 /* LaunchScreen.storyboard */,
+				F32A97FF1F30CDD100C15725 /* Info.plist */,
+				F3A7F0B11F389CF200CAA9C3 /* SearchResultCell.xib */,
+				F3B6F96A1F330EA800E4F607 /* CountryListCell.xib */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F3A566CB1F3B100A009B9656 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F32A98051F30CF6800C15725 /* RegionsViewController.swift */,
+				F32A98071F30CF6D00C15725 /* CountryListViewController.swift */,
+				F3E988FE1F3345000010BC50 /* CountryInfoViewController.swift */,
+				F3A7F0AF1F38907D00CAA9C3 /* SearchViewController.swift */,
+				F3A7F0B51F389F8E00CAA9C3 /* SearchVC+SearchBarDelegate.swift */,
+				F3FC074C1F3A04A800FE4D91 /* FavoriteListViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F32A97ED1F30CDD100C15725 /* Atlas */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F32A98021F30CDD100C15725 /* Build configuration list for PBXNativeTarget "Atlas" */;
+			buildPhases = (
+				F32A97EA1F30CDD100C15725 /* Sources */,
+				F32A97EB1F30CDD100C15725 /* Frameworks */,
+				F32A97EC1F30CDD100C15725 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Atlas;
+			productName = Atlas;
+			productReference = F32A97EE1F30CDD100C15725 /* Atlas.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F32A97E61F30CDD100C15725 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Admin;
+				TargetAttributes = {
+					F32A97ED1F30CDD100C15725 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = T6742XY376;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F32A97E91F30CDD100C15725 /* Build configuration list for PBXProject "Atlas" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F32A97E51F30CDD100C15725;
+			productRefGroup = F32A97EF1F30CDD100C15725 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F32A97ED1F30CDD100C15725 /* Atlas */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F32A97EC1F30CDD100C15725 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3B6F96B1F330EA800E4F607 /* CountryListCell.xib in Resources */,
+				F3A7F0B21F389CF200CAA9C3 /* SearchResultCell.xib in Resources */,
+				F32A97FE1F30CDD100C15725 /* LaunchScreen.storyboard in Resources */,
+				F32A97FB1F30CDD100C15725 /* Assets.xcassets in Resources */,
+				F32A97F91F30CDD100C15725 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F32A97EA1F30CDD100C15725 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F32A980C1F30CF7400C15725 /* CountryService.swift in Sources */,
+				F32A98081F30CF6D00C15725 /* CountryListViewController.swift in Sources */,
+				F3A7F0B01F38907D00CAA9C3 /* SearchViewController.swift in Sources */,
+				F3B6F9691F330D8D00E4F607 /* CountryListCell.swift in Sources */,
+				F32A98061F30CF6800C15725 /* RegionsViewController.swift in Sources */,
+				F32A980A1F30CF7100C15725 /* Country.swift in Sources */,
+				F3E988FF1F3345000010BC50 /* CountryInfoViewController.swift in Sources */,
+				F3A7F0B41F389DBA00CAA9C3 /* SearchResultCell.swift in Sources */,
+				F3FC074D1F3A04A800FE4D91 /* FavoriteListViewController.swift in Sources */,
+				F3A7F0B61F389F8E00CAA9C3 /* SearchVC+SearchBarDelegate.swift in Sources */,
+				F32A97F21F30CDD100C15725 /* AppDelegate.swift in Sources */,
+				F336AC891F39FE3E009D14DA /* FavoritesList.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F32A97F71F30CDD100C15725 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F32A97F81F30CDD100C15725 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F32A97FC1F30CDD100C15725 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F32A97FD1F30CDD100C15725 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F32A98001F30CDD100C15725 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F32A98011F30CDD100C15725 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F32A98031F30CDD100C15725 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T6742XY376;
+				INFOPLIST_FILE = Atlas/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eugene.nimenko.Atlas;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F32A98041F30CDD100C15725 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T6742XY376;
+				INFOPLIST_FILE = Atlas/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eugene.nimenko.Atlas;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F32A97E91F30CDD100C15725 /* Build configuration list for PBXProject "Atlas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F32A98001F30CDD100C15725 /* Debug */,
+				F32A98011F30CDD100C15725 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F32A98021F30CDD100C15725 /* Build configuration list for PBXNativeTarget "Atlas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F32A98031F30CDD100C15725 /* Debug */,
+				F32A98041F30CDD100C15725 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F32A97E61F30CDD100C15725 /* Project object */;
+}

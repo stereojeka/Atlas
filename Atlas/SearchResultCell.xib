@@ -35,6 +35,7 @@
                     </webView>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="M5R-NS-2eA" secondAttribute="trailing" constant="20" id="1Lv-Pn-joZ"/>
                     <constraint firstItem="UHW-MN-alm" firstAttribute="centerY" secondItem="AcK-34-4v9" secondAttribute="centerY" id="6L6-nf-1j5"/>
                     <constraint firstAttribute="leadingMargin" secondItem="UHW-MN-alm" secondAttribute="leading" id="fEG-gU-yVt"/>
                     <constraint firstItem="UHW-MN-alm" firstAttribute="top" secondItem="AcK-34-4v9" secondAttribute="topMargin" constant="5" id="j89-pa-BFb"/>

@@ -73,7 +73,6 @@ class CountryInfoViewController: UIViewController {
     }
     
     
-    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
         favoriteSwitch.isOn = favorite

@@ -27,7 +27,7 @@ class CountryListViewController: UITableViewController {
         tableView.register(CountryListCell.self, forCellReuseIdentifier: CountryListViewController.cellIdentifier)
         let xib = UINib(nibName: "CountryListCell", bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: CountryListViewController.cellIdentifier)
-        tableView.rowHeight = 110
+        tableView.rowHeight = 120
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         countryService.getCountriesByRegion(regionLink) { [unowned self] results, errorMessage in

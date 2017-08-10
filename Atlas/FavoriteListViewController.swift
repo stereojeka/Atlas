@@ -26,7 +26,7 @@ class FavoriteListViewController: UITableViewController {
         tableView.register(CountryListCell.self, forCellReuseIdentifier: FavoriteListViewController.cellIdentifier)
         let xib = UINib(nibName: "CountryListCell", bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: FavoriteListViewController.cellIdentifier)
-        tableView.rowHeight = 110
+        tableView.rowHeight = 120
         
     }
     

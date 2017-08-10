@@ -14,9 +14,14 @@ class CountryInfoViewController: UIViewController {
     private var countryService: CountryService!
     
     var countryCode: String!
-    var country: Country!
-    var borderedCountries: [Country]!
+    var country: Country! {
+        didSet {
+            getBorderredCountries()
+        }
+    }
     var favorite: Bool = false
+    
+    let controller = CountryTableViewController()
 
     
     
@@ -39,12 +44,13 @@ class CountryInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        boardsTableView.dataSource = controller
         
         countryService = CountryService.sharedCountryService
         
-        boardsTableView.register(CountryListCell.self, forCellReuseIdentifier: CountryInfoViewController.cellIdentifier)
+        boardsTableView.register(CountryListCell.self, forCellReuseIdentifier: CountryTableViewController.cellId)
         let xib = UINib(nibName: "CountryListCell", bundle: nil)
-        boardsTableView.register(xib, forCellReuseIdentifier: CountryInfoViewController.cellIdentifier)
+        boardsTableView.register(xib, forCellReuseIdentifier: CountryTableViewController.cellId)
         boardsTableView.rowHeight = 140
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -72,20 +78,34 @@ class CountryInfoViewController: UIViewController {
         
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
         favoriteSwitch.isOn = favorite
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+//    override func viewDidAppear(_ animated: Bool) {
+//        if self.country.borders != nil, !(self.country.borders?.isEmpty)! {
+//            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+//            countryService.getMultipleCountries(self.country.borders!) { [unowned self] result, errorMessage in
+//                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+//                self.controller.items = result!
+//                self.boardsTableView.reloadData()
+//                if !self.controller.items.isEmpty {
+//                    self.boardsWithLabel.isHidden = false
+//                }
+//                if !errorMessage.isEmpty { print("Search error: " + errorMessage) }
+//            }
+//        }
+//    }
+    
+    func getBorderredCountries() {
         if self.country.borders != nil, !(self.country.borders?.isEmpty)! {
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
             countryService.getMultipleCountries(self.country.borders!) { [unowned self] result, errorMessage in
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                self.borderedCountries = result
+                self.controller.items = result!
                 self.boardsTableView.reloadData()
-                if !self.borderedCountries.isEmpty {
+                if !self.controller.items.isEmpty {
                     self.boardsWithLabel.isHidden = false
                 }
                 if !errorMessage.isEmpty { print("Search error: " + errorMessage) }
@@ -97,7 +117,6 @@ class CountryInfoViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     
     // MARK: - Navigation
 
@@ -105,49 +124,21 @@ class CountryInfoViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let indexPath = boardsTableView.indexPath(for: sender as! UITableViewCell)!
         let listVC = segue.destination as! CountryInfoViewController
-        listVC.navigationItem.title = borderedCountries[indexPath.row].name
-        listVC.countryCode = borderedCountries[indexPath.row].alpha3Code
+        listVC.navigationItem.title = controller.items[indexPath.row].name
+        listVC.countryCode = controller.items[indexPath.row].alpha3Code
         listVC.favorite = FavoritesList.sharedFavoritesList.favorites.contains(listVC.countryCode)
-        listVC.borderedCountries = []
+        listVC.controller.items = []
     }
- 
 
 }
 
-
-extension CountryInfoViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    fileprivate static let cellIdentifier = "CountryCell"
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return borderedCountries.count
-    }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: CountryInfoViewController.cellIdentifier, for: indexPath) as! CountryListCell
-        
-        cell.flagView.loadHTMLString("<img style=\"position:absolute;left:0;top:0;\" width=\"100%\" height=\"100%\" src=\" \(borderedCountries[indexPath.row].flag)\" alt=\"Flag\" >", baseURL: nil)
-        cell.nameLabel.text = borderedCountries[indexPath.row].name
-        cell.nativeNameLabel.text = borderedCountries[indexPath.row].nativeName
-        return cell
-    }
+extension CountryInfoViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "ShowBoardCountry", sender: tableView.cellForRow(at: indexPath))
     }
-
+    
 }
-
-
-
 
 
 

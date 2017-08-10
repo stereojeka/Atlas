@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina4_7" orientation="landscape">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,25 +19,25 @@
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="Enter the country name" translatesAutoresizingMaskIntoConstraints="NO" id="T1I-oP-g7w">
-                                <rect key="frame" x="0.0" y="64" width="667" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="8rJ-Kc-sve" id="qcM-gR-Wmh"/>
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cwZ-nM-hlY">
-                                <rect key="frame" x="4" y="108" width="663" height="218"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SearchResultCell" rowHeight="64" id="QBt-i1-4WY">
-                                        <rect key="frame" x="0.0" y="28" width="663" height="64"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellId" rowHeight="64" id="QBt-i1-4WY" customClass="CountryListCell" customModule="Atlas" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QBt-i1-4WY" id="EsA-QX-TzM">
-                                            <rect key="frame" x="0.0" y="0.0" width="630" height="63.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -77,15 +77,15 @@
             <objects>
                 <tableViewController id="mf4-WM-I1c" customClass="FavoriteListViewController" customModule="Atlas" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="g14-J4-eXt">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountryCell" id="bJV-Tu-uzQ">
-                                <rect key="frame" x="0.0" y="28" width="667" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId" id="bJV-Tu-uzQ" customClass="CountryListCell" customModule="Atlas" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bJV-Tu-uzQ" id="Ras-S5-48k">
-                                    <rect key="frame" x="0.0" y="0.0" width="667" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -165,15 +165,15 @@
             <objects>
                 <tableViewController title="Regions and Regional Blocks" id="cqr-P4-1jO" customClass="RegionsViewController" customModule="Atlas" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aFX-S1-eKB">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RegionName" id="rr7-kR-tWo">
-                                <rect key="frame" x="0.0" y="28" width="667" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rr7-kR-tWo" id="fCX-6r-kEj">
-                                    <rect key="frame" x="0.0" y="0.0" width="634" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -197,15 +197,15 @@
             <objects>
                 <tableViewController id="Cqx-lS-MJH" customClass="CountryListViewController" customModule="Atlas" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="09c-NX-aqG">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountryCell" id="t4w-xt-M8n" customClass="CountryListCell" customModule="Atlas" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="667" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId" id="t4w-xt-M8n" customClass="CountryListCell" customModule="Atlas" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t4w-xt-M8n" id="fxi-eP-lik">
-                                    <rect key="frame" x="0.0" y="0.0" width="667" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -233,36 +233,36 @@
                         <viewControllerLayoutGuide type="bottom" id="9be-LE-4FL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tLF-ka-qLa">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-C-3PO-48" translatesAutoresizingMaskIntoConstraints="NO" id="few-to-hRA">
-                                <rect key="frame" x="142" y="130" width="48" height="48"/>
+                                <rect key="frame" x="138" y="118" width="48" height="48"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMT-4a-VXd">
-                                <rect key="frame" x="200" y="87" width="5" height="21"/>
+                                <rect key="frame" x="196" y="87" width="5" height="21"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boards with:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4c-ea-6IW">
-                                <rect key="frame" x="20" y="177" width="95" height="21"/>
+                                <rect key="frame" x="16" y="461" width="95" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-Stack of Money-48" translatesAutoresizingMaskIntoConstraints="NO" id="cQn-8t-8j8">
-                                <rect key="frame" x="142" y="72" width="48" height="48"/>
+                                <rect key="frame" x="138" y="72" width="48" height="48"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bmn-Jg-SZj">
-                                <rect key="frame" x="20" y="206" width="309.5" height="120"/>
+                                <rect key="frame" x="16" y="490" width="343" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountryCell" id="v8d-Ux-gkF" customClass="CountryListCell" customModule="Atlas" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="309.5" height="44"/>
+                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellId" id="v8d-Ux-gkF" customClass="CountryListCell" customModule="Atlas" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v8d-Ux-gkF" id="TNy-ZG-iY8">
-                                            <rect key="frame" x="0.0" y="0.0" width="309.5" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -276,16 +276,16 @@
                                 </connections>
                             </tableView>
                             <mapView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BHh-Tj-flA">
-                                <rect key="frame" x="337.5" y="206" width="309.5" height="112"/>
+                                <rect key="frame" x="16" y="223" width="343" height="237"/>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1w-zV-MVs">
-                                <rect key="frame" x="200" y="145" width="5" height="21"/>
+                                <rect key="frame" x="196" y="132" width="5" height="21"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <webView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWo-Y6-n2Z">
-                                <rect key="frame" x="20" y="78" width="114" height="88"/>
+                                <rect key="frame" x="16" y="72" width="114" height="88"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="114" id="Crn-th-mnp">
@@ -328,13 +328,13 @@
                                 </variation>
                             </webView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Include Country in Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDO-Wv-13N">
-                                <rect key="frame" x="370" y="177" width="213" height="21"/>
+                                <rect key="frame" x="89" y="194" width="213" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fCi-ee-NiY">
-                                <rect key="frame" x="598" y="172" width="51" height="31"/>
+                                <rect key="frame" x="310" y="189" width="51" height="31"/>
                                 <connections>
                                     <action selector="toggleFavorite:" destination="NIi-7w-VEF" eventType="valueChanged" id="3c2-o7-DLG"/>
                                 </connections>
@@ -419,10 +419,8 @@
                             <constraint firstItem="TMT-4a-VXd" firstAttribute="top" secondItem="4Dd-l9-OrY" secondAttribute="bottom" constant="23" id="hei-wl-5Qe"/>
                             <constraint firstItem="wWo-Y6-n2Z" firstAttribute="leading" secondItem="BHh-Tj-flA" secondAttribute="leading" id="jHc-d5-iMS"/>
                             <constraint firstItem="few-to-hRA" firstAttribute="top" secondItem="cQn-8t-8j8" secondAttribute="bottom" constant="8" id="lJg-RU-fXJ"/>
-                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="TMT-4a-VXd" secondAttribute="trailing" constant="20" id="ocL-5F-Her"/>
                             <constraint firstItem="BHh-Tj-flA" firstAttribute="trailing" secondItem="tLF-ka-qLa" secondAttribute="trailingMargin" id="qWw-xW-d3T"/>
                             <constraint firstItem="TMT-4a-VXd" firstAttribute="leading" secondItem="cQn-8t-8j8" secondAttribute="trailing" constant="10" id="r9Y-V6-bDe"/>
-                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="h1w-zV-MVs" secondAttribute="trailing" constant="20" id="rV5-On-wwX"/>
                             <constraint firstItem="zDO-Wv-13N" firstAttribute="top" secondItem="h1w-zV-MVs" secondAttribute="bottom" constant="11" id="rms-Go-0Bl"/>
                             <constraint firstItem="few-to-hRA" firstAttribute="top" secondItem="cQn-8t-8j8" secondAttribute="bottom" constant="10" id="sFT-IO-fng"/>
                             <constraint firstItem="wWo-Y6-n2Z" firstAttribute="top" secondItem="4Dd-l9-OrY" secondAttribute="bottom" constant="23" id="sXs-l2-n7p">
@@ -656,6 +654,6 @@
         <image name="star-7" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="09q-29-tNZ"/>
+        <segue reference="jIk-xE-esr"/>
     </inferredMetricsTieBreakers>
 </document>

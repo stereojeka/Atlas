@@ -17,11 +17,10 @@
 		F32A980C1F30CF7400C15725 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A980B1F30CF7400C15725 /* CountryService.swift */; };
 		F336AC891F39FE3E009D14DA /* FavoritesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F336AC881F39FE3E009D14DA /* FavoritesList.swift */; };
 		F3A7F0B01F38907D00CAA9C3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A7F0AF1F38907D00CAA9C3 /* SearchViewController.swift */; };
-		F3A7F0B21F389CF200CAA9C3 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3A7F0B11F389CF200CAA9C3 /* SearchResultCell.xib */; };
-		F3A7F0B41F389DBA00CAA9C3 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A7F0B31F389DBA00CAA9C3 /* SearchResultCell.swift */; };
 		F3A7F0B61F389F8E00CAA9C3 /* SearchVC+SearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A7F0B51F389F8E00CAA9C3 /* SearchVC+SearchBarDelegate.swift */; };
 		F3B6F9691F330D8D00E4F607 /* CountryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B6F9681F330D8D00E4F607 /* CountryListCell.swift */; };
 		F3B6F96B1F330EA800E4F607 /* CountryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3B6F96A1F330EA800E4F607 /* CountryListCell.xib */; };
+		F3BA1E131F3C4C0E003CDC77 /* CountryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA1E121F3C4C0E003CDC77 /* CountryTableViewController.swift */; };
 		F3E988FF1F3345000010BC50 /* CountryInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E988FE1F3345000010BC50 /* CountryInfoViewController.swift */; };
 		F3FC074D1F3A04A800FE4D91 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FC074C1F3A04A800FE4D91 /* FavoriteListViewController.swift */; };
 /* End PBXBuildFile section */
@@ -39,11 +38,10 @@
 		F32A980B1F30CF7400C15725 /* CountryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
 		F336AC881F39FE3E009D14DA /* FavoritesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesList.swift; sourceTree = "<group>"; };
 		F3A7F0AF1F38907D00CAA9C3 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		F3A7F0B11F389CF200CAA9C3 /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
-		F3A7F0B31F389DBA00CAA9C3 /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		F3A7F0B51F389F8E00CAA9C3 /* SearchVC+SearchBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SearchVC+SearchBarDelegate.swift"; sourceTree = "<group>"; };
 		F3B6F9681F330D8D00E4F607 /* CountryListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListCell.swift; sourceTree = "<group>"; };
 		F3B6F96A1F330EA800E4F607 /* CountryListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryListCell.xib; sourceTree = "<group>"; };
+		F3BA1E121F3C4C0E003CDC77 /* CountryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewController.swift; sourceTree = "<group>"; };
 		F3E988FE1F3345000010BC50 /* CountryInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryInfoViewController.swift; sourceTree = "<group>"; };
 		F3FC074C1F3A04A800FE4D91 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				F32A97F01F30CDD100C15725 /* Atlas */,
+				F3A566C91F3B0FB0009B9656 /* Networking */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,7 +77,6 @@
 		F32A97F01F30CDD100C15725 /* Atlas */ = {
 			isa = PBXGroup;
 			children = (
-				F3A566C91F3B0FB0009B9656 /* Networking */,
 				F32A97EF1F30CDD100C15725 /* Products */,
 				F3A566CA1F3B0FD6009B9656 /* Supporting Files */,
 				F3A566C81F3B0F70009B9656 /* Model */,
@@ -92,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				F3B6F9681F330D8D00E4F607 /* CountryListCell.swift */,
-				F3A7F0B31F389DBA00CAA9C3 /* SearchResultCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -112,6 +109,7 @@
 				F32A980B1F30CF7400C15725 /* CountryService.swift */,
 			);
 			name = Networking;
+			path = Atlas;
 			sourceTree = "<group>";
 		};
 		F3A566CA1F3B0FD6009B9656 /* Supporting Files */ = {
@@ -122,7 +120,6 @@
 				F32A97FA1F30CDD100C15725 /* Assets.xcassets */,
 				F32A97FC1F30CDD100C15725 /* LaunchScreen.storyboard */,
 				F32A97FF1F30CDD100C15725 /* Info.plist */,
-				F3A7F0B11F389CF200CAA9C3 /* SearchResultCell.xib */,
 				F3B6F96A1F330EA800E4F607 /* CountryListCell.xib */,
 			);
 			name = "Supporting Files";
@@ -137,6 +134,7 @@
 				F3A7F0AF1F38907D00CAA9C3 /* SearchViewController.swift */,
 				F3A7F0B51F389F8E00CAA9C3 /* SearchVC+SearchBarDelegate.swift */,
 				F3FC074C1F3A04A800FE4D91 /* FavoriteListViewController.swift */,
+				F3BA1E121F3C4C0E003CDC77 /* CountryTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -202,7 +200,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3B6F96B1F330EA800E4F607 /* CountryListCell.xib in Resources */,
-				F3A7F0B21F389CF200CAA9C3 /* SearchResultCell.xib in Resources */,
 				F32A97FE1F30CDD100C15725 /* LaunchScreen.storyboard in Resources */,
 				F32A97FB1F30CDD100C15725 /* Assets.xcassets in Resources */,
 				F32A97F91F30CDD100C15725 /* Main.storyboard in Resources */,
@@ -218,12 +215,12 @@
 			files = (
 				F32A980C1F30CF7400C15725 /* CountryService.swift in Sources */,
 				F32A98081F30CF6D00C15725 /* CountryListViewController.swift in Sources */,
+				F3BA1E131F3C4C0E003CDC77 /* CountryTableViewController.swift in Sources */,
 				F3A7F0B01F38907D00CAA9C3 /* SearchViewController.swift in Sources */,
 				F3B6F9691F330D8D00E4F607 /* CountryListCell.swift in Sources */,
 				F32A98061F30CF6800C15725 /* RegionsViewController.swift in Sources */,
 				F32A980A1F30CF7100C15725 /* Country.swift in Sources */,
 				F3E988FF1F3345000010BC50 /* CountryInfoViewController.swift in Sources */,
-				F3A7F0B41F389DBA00CAA9C3 /* SearchResultCell.swift in Sources */,
 				F3FC074D1F3A04A800FE4D91 /* FavoriteListViewController.swift in Sources */,
 				F3A7F0B61F389F8E00CAA9C3 /* SearchVC+SearchBarDelegate.swift in Sources */,
 				F32A97F21F30CDD100C15725 /* AppDelegate.swift in Sources */,

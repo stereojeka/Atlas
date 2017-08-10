@@ -22,7 +22,7 @@ extension SearchViewController: UISearchBarDelegate {
         countryService.getSearchResults(searchTerm: searchText) { [unowned self] results, errorMessage in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             if let results = results {
-                self.searchResults = results
+                self.controller.items = results
                 self.tableView.reloadData()
             } else {
                 let alert = UIAlertController(title: "Search Results",

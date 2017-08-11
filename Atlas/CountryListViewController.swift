@@ -25,11 +25,9 @@ class CountryListViewController: UITableViewController {
         tableView.register(xib, forCellReuseIdentifier: CountryTableViewController.cellId)
         tableView.rowHeight = 140
         
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        countryService.getCountriesByRegion(regionLink) { [unowned self] results, errorMessage in
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            if results != nil {
-                self.controller.items = results!
+        countryService.getCountries(regionLink) { [unowned self] results, errorMessage in
+            if let results = results {
+                self.controller.items = results
                 self.tableView.dataSource = self.controller
                 self.tableView.reloadData()
             }
@@ -60,7 +58,9 @@ class CountryListViewController: UITableViewController {
         let listVC = segue.destination as! CountryInfoViewController
         listVC.navigationItem.title = controller.items[indexPath.row].name
         listVC.countryCode = controller.items[indexPath.row].alpha3Code
-        listVC.favorite = FavoritesList.sharedFavoritesList.favorites.contains(listVC.countryCode)
+        listVC.favorite = FavoritesList.sharedFavoritesList.favorites.contains(where: { (_ country: Country) -> Bool in
+            listVC.countryCode == country.alpha3Code
+        })
         listVC.controller.items = []
     }
 

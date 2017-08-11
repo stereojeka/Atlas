@@ -23,20 +23,36 @@ final class CountryService {
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
     
-    func getCountriesByRegion(_ region: String, completion: @escaping CountriesResult) {
+    fileprivate func makeRequest(url: URL, onCompletion: @escaping (Data?, Error?) -> Void) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        dataTask = defaultSession.dataTask(with: url) { data, response, error in
+            if let data = data,
+                let response = response as? HTTPURLResponse,
+                response.statusCode == 200 {
+                onCompletion(data, error)
+            } else {
+                onCompletion(nil, error)
+            }
+        }
+    }
+    
+    func getCountries(_ url: String, onCompletion: @escaping CountriesResult) {
         dataTask?.cancel()
-        if var urlComponents = URLComponents(string: region) {
+        if let urlComponents = URLComponents(string: url) {
             guard let url = urlComponents.url else { return }
-            dataTask = defaultSession.dataTask(with: url) { [unowned self] data, response, error in
-                defer { self.dataTask = nil }
+            makeRequest(url: url) { [unowned self] data, error in
                 if let error = error {
                     self.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
-                } else if let data = data,
-                    let response = response as? HTTPURLResponse,
-                    response.statusCode == 200 {
+                } else if let data = data {
                     self.updateCountries(data)
                     DispatchQueue.main.async {
-                        completion(self.countries, self.errorMessage)
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        onCompletion(self.countries, self.errorMessage)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        onCompletion(nil, self.errorMessage)
                     }
                 }
             }
@@ -48,6 +64,7 @@ final class CountryService {
         dataTask?.cancel()
         if var urlComponents = URLComponents(string: "https://restcountries.eu/rest/v2/alpha/\(code)") {
             guard let url = urlComponents.url else { return }
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
             dataTask = defaultSession.dataTask(with: url) { [unowned self] data, response, error in
                 defer { self.dataTask = nil }
                 if let error = error {
@@ -57,67 +74,13 @@ final class CountryService {
                     response.statusCode == 200 {
                     self.updateCountry(data)
                     DispatchQueue.main.async {
+                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
                         completion(self.singleCountry, self.errorMessage)
                     }
                 }
             }
             dataTask?.resume()
         }
-    }
-    
-    func getMultipleCountries(_ codes: [String], completion: @escaping CountriesResult) {
-        dataTask?.cancel()
-        
-        var codesString = ""
-        for code in codes {
-            codesString += code
-            codesString.append(";")
-        }
-        if var urlComponents = URLComponents(string: "https://restcountries.eu/rest/v2/alpha?codes=\(codesString)") {
-            guard let url = urlComponents.url else { return }
-            dataTask = defaultSession.dataTask(with: url) { [unowned self] data, response, error in
-                defer { self.dataTask = nil }
-                if let error = error {
-                    self.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
-                } else if let data = data,
-                    let response = response as? HTTPURLResponse,
-                    response.statusCode == 200 {
-                    self.updateCountries(data)
-                    DispatchQueue.main.async {
-                        completion(self.countries, self.errorMessage)
-                    }
-                }
-            }
-            dataTask?.resume()
-        }
-
-    }
-    
-    func getSearchResults(searchTerm: String, completion: @escaping CountriesResult) {
-        dataTask?.cancel()
-
-        if var urlComponents = URLComponents(string: "https://restcountries.eu/rest/v2/name/\(searchTerm)") {
-            guard let url = urlComponents.url else { return }
-            dataTask = defaultSession.dataTask(with: url) { [unowned self] data, response, error in
-                defer { self.dataTask = nil }
-                if let error = error {
-                    self.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
-                } else if let data = data,
-                    let response = response as? HTTPURLResponse,
-                    response.statusCode == 200 {
-                    self.updateCountries(data)
-                    DispatchQueue.main.async {
-                        completion(self.countries, self.errorMessage)
-                    }
-                } else {
-                    if let response = response as? HTTPURLResponse, response.statusCode == 404 {
-                        completion(nil, self.errorMessage)
-                    }
-                }
-            }
-            dataTask?.resume()
-        }
-
     }
     
     fileprivate func updateCountries(_ data: Data) {

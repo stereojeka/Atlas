@@ -12,24 +12,32 @@ import UIKit
 final class FavoritesList {
     
     static let sharedFavoritesList = FavoritesList()
-    private(set) var favorites: [String]
+    private(set) var favorites: [Country]
     
     init() {
-        let defaults = UserDefaults.standard
-        let storedFavorites = defaults.object(forKey: "favorites") as? [String]
-        favorites = storedFavorites != nil ? storedFavorites! : []
-    }
-    
-    func addFavorite(newFavouriteCountry: String){
-        if !favorites.contains(newFavouriteCountry) {
-            favorites.append(newFavouriteCountry)
-            saveFavorites()
+        
+        if let unarchivedObject = UserDefaults.standard.object(forKey: "favorites") as? Data,
+            let favs = NSKeyedUnarchiver.unarchiveObject(with: unarchivedObject as Data) as? [Country] {
+            favorites = favs
+        } else {
+            favorites = []
         }
         
     }
     
-    func removeFavorite(favoriteToDelete: String) {
-        if let index = favorites.index(of: favoriteToDelete) {
+    func addFavorite(newFavouriteCountry: Country){
+        if !favorites.contains(where: { (_ country: Country) -> Bool in
+            newFavouriteCountry.alpha3Code == country.alpha3Code
+        }) {
+            favorites.append(newFavouriteCountry)
+            saveFavorites()
+        }
+    }
+    
+    func removeFavorite(favoriteToDelete: Country) {
+        if let index = favorites.index(where: { (_ country: Country) -> Bool in
+            favoriteToDelete.alpha3Code == country.alpha3Code
+        }) {
             favorites.remove(at: index)
             saveFavorites()
         }
@@ -43,8 +51,10 @@ final class FavoritesList {
     }
     
     private func saveFavorites() {
-        let defaults = UserDefaults.standard
-        defaults.set(favorites, forKey: "favourites")
-        defaults.synchronize()
+
+        let archivedObject = NSKeyedArchiver.archivedData(withRootObject: favorites as NSArray) as NSData
+        UserDefaults.standard.set(archivedObject, forKey: "favorites")
+        UserDefaults.standard.synchronize()
+
     }
 }

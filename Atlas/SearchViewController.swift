@@ -50,7 +50,9 @@ class SearchViewController: UIViewController {
         let listVC = segue.destination as! CountryInfoViewController
         listVC.navigationItem.title = controller.items[indexPath.row].name
         listVC.countryCode = controller.items[indexPath.row].alpha3Code
-        listVC.favorite = FavoritesList.sharedFavoritesList.favorites.contains(listVC.countryCode)
+        listVC.favorite = FavoritesList.sharedFavoritesList.favorites.contains(where: { (_ country: Country) -> Bool in
+            listVC.countryCode == country.alpha3Code
+        })
         listVC.controller.items = []
     }
     

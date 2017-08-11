@@ -18,9 +18,7 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         dismissKeyboard()
         guard let searchText = searchBar.text, !searchText.isEmpty else { return }
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        countryService.getSearchResults(searchTerm: searchText) { [unowned self] results, errorMessage in
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        countryService.getCountries("https://restcountries.eu/rest/v2/name/\(searchText)") { [unowned self] results, errorMessage in
             if let results = results {
                 self.controller.items = results
                 self.tableView.reloadData()

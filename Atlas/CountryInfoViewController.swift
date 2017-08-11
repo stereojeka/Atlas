@@ -36,9 +36,9 @@ class CountryInfoViewController: UIViewController {
     @IBAction func toggleFavorite(_ sender: UISwitch) {
         let favoritesList = FavoritesList.sharedFavoritesList
         if sender.isOn {
-            favoritesList.addFavorite(newFavouriteCountry: country.alpha3Code)
+            favoritesList.addFavorite(newFavouriteCountry: country)
         } else {
-            favoritesList.removeFavorite(favoriteToDelete: country.alpha3Code)
+            favoritesList.removeFavorite(favoriteToDelete: country)
         }
     }
     
@@ -83,26 +83,15 @@ class CountryInfoViewController: UIViewController {
         favoriteSwitch.isOn = favorite
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        if self.country.borders != nil, !(self.country.borders?.isEmpty)! {
-//            UIApplication.shared.isNetworkActivityIndicatorVisible = true
-//            countryService.getMultipleCountries(self.country.borders!) { [unowned self] result, errorMessage in
-//                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-//                self.controller.items = result!
-//                self.boardsTableView.reloadData()
-//                if !self.controller.items.isEmpty {
-//                    self.boardsWithLabel.isHidden = false
-//                }
-//                if !errorMessage.isEmpty { print("Search error: " + errorMessage) }
-//            }
-//        }
-//    }
-    
     func getBorderredCountries() {
         if self.country.borders != nil, !(self.country.borders?.isEmpty)! {
-            UIApplication.shared.isNetworkActivityIndicatorVisible = true
-            countryService.getMultipleCountries(self.country.borders!) { [unowned self] result, errorMessage in
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            var bordersUrl = "https://restcountries.eu/rest/v2/alpha?codes="
+            
+            for border in self.country.borders! {
+                bordersUrl += border
+                bordersUrl.append(";")
+            }
+            countryService.getCountries(bordersUrl) { [unowned self] result, errorMessage in
                 self.controller.items = result!
                 self.boardsTableView.reloadData()
                 if !self.controller.items.isEmpty {
@@ -126,7 +115,9 @@ class CountryInfoViewController: UIViewController {
         let listVC = segue.destination as! CountryInfoViewController
         listVC.navigationItem.title = controller.items[indexPath.row].name
         listVC.countryCode = controller.items[indexPath.row].alpha3Code
-        listVC.favorite = FavoritesList.sharedFavoritesList.favorites.contains(listVC.countryCode)
+        listVC.favorite = FavoritesList.sharedFavoritesList.favorites.contains(where: { (_ country: Country) -> Bool in
+            listVC.countryCode == country.alpha3Code
+        })
         listVC.controller.items = []
     }
 

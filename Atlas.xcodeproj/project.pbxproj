@@ -61,7 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				F32A97F01F30CDD100C15725 /* Atlas */,
-				F3A566C91F3B0FB0009B9656 /* Networking */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +76,7 @@
 		F32A97F01F30CDD100C15725 /* Atlas */ = {
 			isa = PBXGroup;
 			children = (
+				F3A566C91F3B0FB0009B9656 /* Networking */,
 				F32A97EF1F30CDD100C15725 /* Products */,
 				F3A566CA1F3B0FD6009B9656 /* Supporting Files */,
 				F3A566C81F3B0F70009B9656 /* Model */,
@@ -109,7 +109,6 @@
 				F32A980B1F30CF7400C15725 /* CountryService.swift */,
 			);
 			name = Networking;
-			path = Atlas;
 			sourceTree = "<group>";
 		};
 		F3A566CA1F3B0FD6009B9656 /* Supporting Files */ = {
